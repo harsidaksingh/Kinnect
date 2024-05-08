@@ -1,3 +1,7 @@
+import { ModeToggle } from "@/components/mode-toggle";
+
 export default function Home() {
-  return <div>kinnect project</div>;
+  return <div>kinnect project
+    <ModeToggle/>
+  </div>;
 }
