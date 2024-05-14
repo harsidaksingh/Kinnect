@@ -13,3 +13,4 @@ export const UserAvatar = ({ src, className }: UserAvatarProps) => {
     </Avatar>
   );
 };
+export default UserAvatar;
