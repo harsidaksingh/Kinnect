@@ -30,7 +30,7 @@ export const ServerMember = ({ member, server }: ServerMemberProps) => {
   const onClick = () => {
     router.push(`/servers/${params?.serverId}/conversations/${member.id}`);
   };
-
+// future error
   return (
     <button
       onClick={onClick}
