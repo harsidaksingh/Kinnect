@@ -9,7 +9,7 @@ export const currentProfile = async () => {
     return null;
   }
 
-  const profile = await db.profile.findFirst({
+  const profile = await db.profile.findUnique({  //edit
     where: {
       userId,
     },

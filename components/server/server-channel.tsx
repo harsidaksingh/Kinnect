@@ -39,7 +39,7 @@ export const ServerChannel = ({
     e.stopPropagation();
     onOpen(action, { server, channel });
   };
-  // isko mat chedna ganda error h 
+  // error 
 
   return (
     <button
