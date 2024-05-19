@@ -6,6 +6,7 @@ import { useChatQuery } from "@/hooks/use-chat-query";
 import { Fragment } from "react";
 import { ChatItem } from "./chat-item";
 import { format } from "date-fns";
+import { useChatSocket } from "@/hooks/use-chat-socket";
 
 const DATE_FORMAT = "d MMM yyyy, HH:mm";
 type MessageWithMemberWithProfile = Message & {
@@ -38,8 +39,8 @@ export const ChatMessages = ({
   type,
 }: ChatMessagesProps) => {
   const queryKey = `chat:${chatId}`;
-  // const addKey = `chat:${chatId}:messages`;
-  // const updateKey = `chat:${chatId}:messages:update`;
+  const addKey = `chat:${chatId}:messages`;
+  const updateKey = `chat:${chatId}:messages:update`;
 
   // const chatRef = useRef<ElementRef<"div">>(null);
   // const bottomRef = useRef<ElementRef<"div">>(null);
@@ -51,6 +52,7 @@ export const ChatMessages = ({
       paramKey,
       paramValue,
     });
+    useChatSocket({ queryKey, addKey, updateKey })
 
   if (status === "pending") {
     return (
